@@ -3,9 +3,9 @@ import java.util.*;
 
 public class lab13 {
     ArrayList<Integer> data = new ArrayList<>();
-    public void readData(File file) {
+    public void readData(String file) {
         try {
-            FileReader fr = new FileReader(file.getName());
+            FileReader fr = new FileReader(file);
             BufferedReader br = new BufferedReader(fr);
             String line = "";
             while ((line = br.readLine()) != null) {

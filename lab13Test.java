@@ -123,4 +123,44 @@ public class lab13Test
 		assertArrayEquals(expectedResult3, lab.getResult3());
 	}
 
+	@org.junit.Test
+	public void testGetDistinctGreaterThanFiveCount2() {
+		
+	}
+
+	@org.junit.Test
+	public void testGetEvenCount2() {
+		
+	}
+
+	@org.junit.Test
+	public void testGetOddCount2() {
+		
+	}
+
+	@org.junit.Test
+	public void testGetResult12() {
+		
+	}
+
+	@org.junit.Test
+	public void testGetResult22() {
+		
+	}
+
+	@org.junit.Test
+	public void testGetResult32() {
+		
+	}
+
+	@org.junit.Test
+	public void testGetTotalCount2() {
+		
+	}
+
+	@org.junit.Test
+	public void testReadData() {
+		
+	}
+
 }
