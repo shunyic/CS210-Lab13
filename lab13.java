@@ -1,0 +1,61 @@
+import java.io.*;
+import java.util.*;
+
+public class lab13 {
+    ArrayList<Integer> data = new ArrayList<>();
+    public void readData(File file) {
+        try {
+            FileReader fr = new FileReader(file.getName());
+            BufferedReader br = new BufferedReader(fr);
+            String line = "";
+            while ((line = br.readLine()) != null) {
+                data.add(Integer.parseInt(line));
+            }
+            br.close();
+        }
+        catch (Exception e) {
+            e.printStackTrace();;
+        }
+    }
+
+    public long getTotalCount() {
+        return data.stream().count();
+    }
+
+    public long getOddCount() {
+        return data.stream().filter(n -> n % 2 != 0).count();
+    }
+
+    public long getEvenCount() {
+        return data.stream().filter(n -> n % 2 == 0).count();
+    }
+
+    public long getDistinctGreaterThanFiveCount() {
+        return data.stream().filter(n -> n > 5).distinct().count();
+    }
+
+    public Integer[] getResult1() {
+        return data.stream()
+            .filter(n -> n > 5 && n < 50)
+            .filter(n -> n % 2 == 0)
+            .sorted()
+            .toArray(Integer[]::new);
+    }
+
+    public Integer[] getResult2() {
+        return data.stream()
+            .map(n -> 3 * (n * n))
+            .limit(50)
+            .toArray(Integer[]::new);
+    }
+
+    public Integer[] getResult3() {
+        return data.stream()
+            .filter(n -> n% 2 != 0)
+            .map(n -> n * 2)
+            .sorted()
+            .skip(20)
+            .distinct()
+            .toArray(Integer[]::new);
+    }
+}
